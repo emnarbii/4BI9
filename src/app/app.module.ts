@@ -10,7 +10,7 @@ import { DetailResidenceComponent } from './detail-residence/detail-residence.co
 import { HomeComponent } from './home/home.component';
 import { NoyFoundComponent } from './noy-found/noy-found.component';
 import { AddResidenceComponent } from './add-residence/add-residence.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,8 @@ import { AddResidenceComponent } from './add-residence/add-residence.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

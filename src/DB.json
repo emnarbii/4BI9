@@ -1,0 +1,48 @@
+{
+  "residences": [
+    {
+      "id": "1",
+      "name": "Test",
+      "address": "test",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": "2",
+      "name": "Aaaaaaaaaaaaaaaa",
+      "address": "test",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": "3",
+      "name": "Kallala",
+      "address": "mestire",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Vendu"
+    },
+    {
+      "id": "8335",
+      "name": "Emna",
+      "address": "Bizerte tttetette",
+      "status": "dispo",
+      "image": "C:\\fakepath\\R4.jpg"
+    }
+  ],
+  "locations": [
+    {
+      "id": "1",
+      "name": "Test",
+      "address": "test",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    },
+    {
+      "id": "1",
+      "name": "Aaaaaaaaaaaaaaaa",
+      "address": "test",
+      "image": "../../assets/images/R4.jpg",
+      "status": "Disponible"
+    }
+  ]
+}

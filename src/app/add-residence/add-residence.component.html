@@ -57,7 +57,7 @@
     <span *ngIf="residenceForm.get('image')?.hasError('required')" style="color: red;">the image is required</span>
 
 </div>
-  <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid" (click)="getFormValue()">
+  <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid" (click)="add()">
     Submit
   </button>
 </form>
