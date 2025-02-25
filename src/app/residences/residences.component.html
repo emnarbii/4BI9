@@ -1,0 +1,32 @@
+<p>residences works!</p>
+<!-- <h1  [style.color]="color" >{{residence}}</h1>
+<input type="text" [placeholder]="p">
+<input type="color"  [(ngModel)]="color">
+<button (click)="clickMe()" [style.background-color]="color" >OK</button> -->
+<a routerLink="/addResidence">Add residence</a>
+ <h1>{{toDay | date}}</h1>
+ <div style="display: flex;flex-wrap: wrap; align-items: center;">
+<div *ngFor="let res of listResidences" >
+<div class="card" style="width: 18rem">
+  <img [src]="res.image" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{res.name}}</h5>
+    <p class="card-text" *ngIf="res.status==='Disponible'" style="color:green"> {{res.status | lowercase}}
+        <p class="card-text" *ngIf="res.status==='Vendu'" style="color:red"> {{res.status |uppercase}}
+            <p class="card-text" *ngIf="res.status==='En Construction'" style="color:orange"> {{res.status}}
+    </p>
+    <a href="#" class="btn btn-primary" (click)="showLocation(res.address)" >show location</a>
+    <!-- <a  class="btn btn-primary" routerLink="/residenceDetails/{{res.id}}" >show Details</a> -->
+    <a  class="btn btn-primary" [routerLink]="['/residenceDetails',res.id]" >show Details</a>
+
+  </div>
+</div>
+</div>
+</div>
+
+
+<div style="border: Red solid 5px;height: 200;">
+ charge residence détails
+
+  <router-outlet></router-outlet>
+</div>

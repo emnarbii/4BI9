@@ -1,0 +1,63 @@
+<form [formGroup]="residenceForm">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      formControlName="name"
+    />
+  </div>
+
+  <div *ngIf="residenceForm.get('name')?.invalid && residenceForm.get('name')?.touched">
+    <span *ngIf="residenceForm.get('name')?.hasError('required')" style="color: red;">the name is required</span>
+    <span *ngIf="name?.hasError('pattern')" style="color: red;">the name must start with uppercase</span>
+
+</div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Address</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+      formControlName="address"
+    />
+  </div>
+  <div *ngIf="residenceForm.get('address')?.invalid && residenceForm.get('address')?.touched">
+    <span *ngIf="residenceForm.get('address')?.hasError('required')" style="color: red;">the address is required</span>
+    <span *ngIf="residenceForm.get('address')?.hasError('minlength')" style="color: red;">min caracters 15</span>
+    <span *ngIf="residenceForm.get('address')?.hasError('maxlength')" style="color: red;">max caracters 50</span>
+
+</div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Status</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+      formControlName="status"
+    />
+  </div>
+  <div *ngIf="residenceForm.get('status')?.invalid && residenceForm.get('status')?.touched">
+    <span *ngIf="residenceForm.get('status')?.hasError('required')" style="color: red;">the status is required</span>
+
+</div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Image</label>
+    <input
+      type="file"
+      class="form-control"
+      id="exampleInputPassword1"
+      formControlName="image"
+    />
+  </div>
+  <div *ngIf="residenceForm.get('image')?.invalid && residenceForm.get('image')?.touched">
+    <span *ngIf="residenceForm.get('image')?.hasError('required')" style="color: red;">the image is required</span>
+
+</div>
+  <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid" (click)="getFormValue()">
+    Submit
+  </button>
+</form>
