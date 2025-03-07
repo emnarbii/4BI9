@@ -47,7 +47,7 @@
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Image</label>
     <input
-      type="file"
+      type="text"
       class="form-control"
       id="exampleInputPassword1"
       formControlName="image"
@@ -57,7 +57,7 @@
     <span *ngIf="residenceForm.get('image')?.hasError('required')" style="color: red;">the image is required</span>
 
 </div>
-  <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid" (click)="add()">
+  <button type="submit" class="btn btn-primary" [disabled]="residenceForm.invalid" (click)="save()">
     Submit
   </button>
 </form>

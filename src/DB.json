@@ -1,11 +1,11 @@
 {
   "residences": [
     {
-      "id": "1",
-      "name": "Test",
-      "address": "test",
+      "name": "Eyaaaaaaaaaaaaaaaa",
+      "address": "Bizerte bhira ggggggg",
+      "status": "Vendu",
       "image": "../../assets/images/R4.jpg",
-      "status": "Disponible"
+      "id": "1"
     },
     {
       "id": "2",
@@ -27,6 +27,34 @@
       "address": "Bizerte tttetette",
       "status": "dispo",
       "image": "C:\\fakepath\\R4.jpg"
+    },
+    {
+      "id": "6ec6",
+      "name": "Elhanna",
+      "address": "El ghazela arina esprit",
+      "status": "Disponible",
+      "image": "\"../../assets/images/R4.jpg"
+    },
+    {
+      "id": "8658",
+      "name": "Elhanna",
+      "address": "El ghazela arina esprit",
+      "status": "Disponible",
+      "image": "\"../../assets/images/R4.jpg"
+    },
+    {
+      "id": "7e7e",
+      "name": "Eggggggg",
+      "address": "ariana esoghra 222",
+      "status": "Vendu",
+      "image": "\"../../assets/images/R4.jpg"
+    },
+    {
+      "id": "97ad",
+      "name": "Tgggggggggggggggggg",
+      "address": "fffffffffffffffffffffffffffffff",
+      "status": "disponible",
+      "image": "\"../../assets/images/R4.jpg"
     }
   ],
   "locations": [

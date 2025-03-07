@@ -18,6 +18,7 @@
     <a href="#" class="btn btn-primary" (click)="showLocation(res.address)" >show location</a>
     <!-- <a  class="btn btn-primary" routerLink="/residenceDetails/{{res.id}}" >show Details</a> -->
     <a  class="btn btn-primary" [routerLink]="['/residenceDetails',res.id]" >show Details</a>
+    <a  class="btn btn-primary" [routerLink]="['/update',res.id]" >update</a>
 
   </div>
 </div>

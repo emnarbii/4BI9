@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ResidenceService } from '../core/services/residence.service';
-import { Route } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Residence } from '../core/models/Residence';
 
 @Component({
   selector: 'app-add-residence',
@@ -10,8 +11,13 @@ import { Route } from '@angular/router';
 })
 export class AddResidenceComponent {
   residenceForm!: FormGroup;
-
-  constructor(private rs: ResidenceService) {
+  id!: number;
+  residence!: Residence;
+  constructor(
+    private rs: ResidenceService,
+    private route: Router,
+    private act: ActivatedRoute
+  ) {
     this.residenceForm = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -27,6 +33,17 @@ export class AddResidenceComponent {
     });
   }
 
+  ngOnInit() {
+    this.id = this.act.snapshot.params['id'];
+    console.log(this.id);
+    //récupérer la residence by id
+    this.rs.getResidenceById(this.id).subscribe((res) => {
+      this.residence = res;
+      console.log(this.residence);
+      this.residenceForm.patchValue(this.residence);
+    });
+  }
+
   get name() {
     return this.residenceForm.get('name');
   }
@@ -36,9 +53,15 @@ export class AddResidenceComponent {
 
   // }
 
-  add() {
-    this.rs
-      .addResidence(this.residenceForm.value)
-      .subscribe(() => console.log('added with success'));
+  save() {
+    if (this.id) {
+      this.rs
+        .updateResidence(this.residenceForm.value, this.id)
+        .subscribe(() => this.route.navigate(['/residences']));
+    } else {
+      this.rs
+        .addResidence(this.residenceForm.value)
+        .subscribe(() => this.route.navigate(['/residences']));
+    }
   }
 }
